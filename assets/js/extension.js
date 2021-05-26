@@ -6,7 +6,7 @@ function includeHTML(StoryId){
 		$('#story-iframe').remove();
 	}
 
-	$('#iframe').load("stories/url.html");
+	$('#iframe').load("stories/" + url + ".html");
 }
 
 $(function() {
