@@ -322,6 +322,14 @@ input, select, textarea {
 		border-bottom-color: #eeeeee;
 	}
 
+/*go-top*/
+	.go-top{
+		position: fixed;
+  		bottom: 15px;
+  		right:15px;
+	}
+
+
 /* Row */
 
 	.row {
