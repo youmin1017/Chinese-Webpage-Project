@@ -39,13 +39,13 @@ $(function() {
     		scrollTop: parseInt($('#posts').offset().top)
     	}, 1000); // scroll to the sory position
  
-    	includeHTML(id);
+    	setTimeout(includeHTML(id), 1000);	 	
     });
 
     $('#go-top').click(function(){
     	if( $('#posts').is(":hidden") ){
-    		$('#posts').fadeIn(1000);
-    		$('#story-iframe').fadeOut(500, function(){
+    		$('#posts').fadeIn(2000);
+    		$('#story-iframe').fadeOut(2000, function(){
     			$(this).remove();
     		}); // remove the single story frame
     	}
