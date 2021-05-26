@@ -1,16 +1,18 @@
 function includeHTML(StoryId){
+	
+	var url = "story-" + StoryId;
+
 	if($('#story-iframe').length){
 		$('#story-iframe').remove();
 	}
 
-	$('#iframe').load( "story-" + StoryId ".html" );
+	$('#iframe').load("stories/url.html");
 }
 
 $(function() {
     $('map').imageMapResize();
     $('.Mainmap').maphilight();
 
-    // $('#iframe').load("stories/story-01.html");
 
     $('area').click(function(){
 
