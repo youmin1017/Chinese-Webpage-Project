@@ -3,7 +3,7 @@ function includeHTML(StoryId){
 	var url = "story-" + StoryId;
 
 	$('#iframe').load("stories/" + url + ".html", function(){
-		$(this).fadeIn(200);
+		$(this).fadeIn(1000);
 		setTimeout(function(){
 			$('html, body').animate({
 				scrollTop: parseInt($('#story-iframe').offset().top)
