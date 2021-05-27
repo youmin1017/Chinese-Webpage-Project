@@ -65,4 +65,12 @@ $(function() {
     		}, 1000);
     	}
     });
+
+    $('#posts').children('a').click(function(){
+
+        var str = $(this).parent('article').attr('id');
+        var id = str.substring(6);
+
+        $( '#area' + id ).click();
+    });
 });
