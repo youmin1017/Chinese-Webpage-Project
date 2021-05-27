@@ -6,7 +6,13 @@ function includeHTML(StoryId){
 		$('#story-iframe').remove();
 	}
 
-	$('#iframe').load("stories/" + url + ".html");
+	$('#iframe').load("stories/" + url + ".html", function(){
+		$(this).fadeIn(1000, function(){
+			$('html, body').animate({
+				scrollTop: parseInt($('#story-iframe').offset().top)
+			}, 1000); // scroll to the sory position
+		});
+	});
 }
 
 $(function() {
@@ -34,19 +40,14 @@ $(function() {
     	if( $('#posts').is(":visible") ){
     		$('#posts').fadeOut(1000);
     	}
-    	
-    	$('html, body').animate({
-    		scrollTop: parseInt($('#posts').offset().top)
-    	}, 1000); // scroll to the sory position
- 
-    	setTimeout(includeHTML(id), 1000);	 	
+    	includeHTML(id);
     });
 
     $('#go-top').click(function(){
     	if( $('#posts').is(":hidden") ){
     		$('#posts').fadeIn(2000);
-    		$('#story-iframe').fadeOut(2000, function(){
-    			$(this).remove();
+    		$('#iframe').fadeOut(2000, function(){
+    			$(this).remove('article');
     		}); // remove the single story frame
     	}
     });
