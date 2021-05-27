@@ -66,9 +66,10 @@ $(function() {
     	}
     });
 
-    $('#posts').children('a').click(function(){
+    $('#posts').find('a').click(function(even){
+        even.preventDefault();
 
-        var str = $(this).parent('article').attr('id');
+        var str = $(this).closest('article').attr('id');
         var id = str.substring(6);
 
         $( '#area' + id ).click();
