@@ -7,11 +7,9 @@ function includeHTML(StoryId){
 	}
 
 	$('#iframe').load("stories/" + url + ".html", function(){
-		$(this).fadeIn(1000, function(){
-			$('html, body').animate({
-				scrollTop: parseInt($('#story-iframe').offset().top)
-			}, 1000); // scroll to the sory position
-		});
+		$('html, body').animate({
+			scrollTop: parseInt($('#story-iframe').offset().top)
+		}, 1000); // scroll to the sory position
 	});
 }
 
@@ -46,8 +44,8 @@ $(function() {
     $('#go-top').click(function(){
     	if( $('#posts').is(":hidden") ){
     		$('#posts').fadeIn(2000);
-    		$('#iframe').fadeOut(2000, function(){
-    			$(this).remove('article');
+    		$('#iframe').children('article').fadeOut(2000, function(){
+    			$(this).remove();
     		}); // remove the single story frame
     	}
     });
