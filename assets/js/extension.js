@@ -3,7 +3,7 @@ function includeHTML(StoryId){
 	var url = "story-" + StoryId;
 
 	$('#iframe').load("stories/" + url + ".html", function(){
-		$(this).fadeIn(1000);
+		$(this).fadeIn(200);
 		setTimeout(function(){
 			$('html, body').animate({
 				scrollTop: parseInt($('#story-iframe').offset().top)
@@ -38,7 +38,7 @@ $(function() {
     		$('#posts').fadeOut(1000);
     	}
     	else{
-    		$('#iframe').fadeOut(1000, function(){
+    		$('#iframe').fadeOut(200, function(){
     			$(this).remove('article');
     		}); // remove the single story frame
     	}
@@ -48,8 +48,8 @@ $(function() {
     $('#go-top').click(function(){    	
     	if( $('#posts').is(":hidden") ){
     		
-    		$('#iframe').children('article').fadeOut(1000, function(){
-    			$(this).remove();
+    		$('#iframe').fadeOut(1000, function(){
+    			$(this).remove('article');
     			$('#posts').fadeIn(1000);
     		}); // remove the single story frame
 
