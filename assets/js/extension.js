@@ -3,7 +3,9 @@ function includeHTML(StoryId){
 	var url = "story-" + StoryId;
 
 	if($('#story-iframe').length){
-		$('#story-iframe').remove();
+		$('#iframe').children('article').fadeOut(2000, function(){
+			$(this).remove();
+		}); // remove the single story frame
 	}
 
 	$('#iframe').load("stories/" + url + ".html", function(){
