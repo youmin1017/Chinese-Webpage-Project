@@ -2,16 +2,13 @@ function includeHTML(StoryId){
 	
 	var url = "story-" + StoryId;
 
-	if($('#story-iframe').length){
-		$('#iframe').children('article').fadeOut(2000, function(){
-			$(this).remove();
-		}); // remove the single story frame
-	}
-
 	$('#iframe').load("stories/" + url + ".html", function(){
-		$('html, body').animate({
-			scrollTop: parseInt($('#story-iframe').offset().top)
-		}, 1000); // scroll to the sory position
+		$(this).fadeIn(1000);
+		setTimeout(function(){
+			$('html, body').animate({
+				scrollTop: parseInt($('#story-iframe').offset().top)
+			}, 1000); // scroll to the sory position
+		}, 100);
 	});
 }
 
@@ -40,15 +37,32 @@ $(function() {
     	if( $('#posts').is(":visible") ){
     		$('#posts').fadeOut(1000);
     	}
+    	else{
+    		$('#iframe').fadeOut(1000, function(){
+    			$(this).remove('article');
+    		}); // remove the single story frame
+    	}
     	includeHTML(id);
     });
 
-    $('#go-top').click(function(){
+    $('#go-top').click(function(){    	
     	if( $('#posts').is(":hidden") ){
-    		$('#posts').fadeIn(2000);
-    		$('#iframe').children('article').fadeOut(2000, function(){
+    		
+    		$('#iframe').children('article').fadeOut(1000, function(){
     			$(this).remove();
+    			$('#posts').fadeIn(1000);
     		}); // remove the single story frame
+
+    		setTimeout(function(){
+    			$('html, body').animate({
+    				scrollTop: parseInt($('#main-pic').offset().top)
+    			}, 1000); // scroll to main image
+    		}, 300); //delay one second
+    	}
+    	else{
+    		$('html, body').animate({
+    			scrollTop: parseInt($('#main-pic').offset().top)
+    		}, 1000);
     	}
     });
 });
