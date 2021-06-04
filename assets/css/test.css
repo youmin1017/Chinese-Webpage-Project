@@ -1,0 +1,66 @@
+.back {
+  background:black url(http://fc01.deviantart.net/fs71/f/2012/160/b/9/stars_by_paulinemoss-d52un4e.jpg);
+  animation: stars 205s linear alternate;
+}
+.center {
+   position: fixed;
+   left: 50%;
+   top:50%;
+     -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+ }
+ .startButton {
+  box-shadow: 3px 0px 0px 0px #3dc21b;
+  background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+  background-color:#44c767;
+  border-radius:15px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:28px;
+  font-weight:bold;
+  padding:18px 67px;
+  text-decoration:none;
+  text-shadow:1px 1px 2px #2f6627;
+}
+.startButton:hover {
+  background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+  background-color:#5cbf2a;
+}
+.startButton:active {
+  position:relative;
+  top:1px;
+}
+
+@keyframes stars {
+  0% { background-position:0 0 }
+  100% { background-position:0 100% }
+}
+
+#box {
+  background:url(https://i.imgur.com/bYSnuNE.jpg?1);
+  background-size:cover;
+  border:2px solid #000;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  animation: movimiento 5s linear 0s infinite;
+  box-shadow:0 0 25px RGBA(255,255,255, 0.10),
+             -8px -8px 15px #000 inset,
+             2px 2px 25px #000 inset,
+             -45px -45px 25px RGBA(0,0,0, 0.5) inset, 
+             25px 25px 45px RGBA(0,0,0, 0.45) inset;
+  margin:6em auto;
+  transform:rotateX(6deg) rotateY(6deg) rotateZ(6deg);
+}
+
+@keyframes movimiento {
+  0% { background-position:0 0 }
+  100% { background-position:355px 0 }
+}
+
+@keyframes stars {
+  0% { background-position:0 0 }
+  100% { background-position:0 100% }
+}
